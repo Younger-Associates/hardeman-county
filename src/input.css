@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom fonts */
+@layer base {
+  @font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUZiZQ.woff2') format('woff2');
+  }
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-700 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading uppercase tracking-wide;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-hc-blue text-white font-heading uppercase tracking-wider px-8 py-3
+           hover:bg-hc-blue-dark transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border-2 border-hc-blue text-hc-blue font-heading uppercase tracking-wider px-8 py-3
+           hover:bg-hc-blue hover:text-white transition-colors duration-200;
+  }
+
+  /* Quick link cards */
+  .quick-link-card {
+    @apply flex flex-col items-center justify-center p-2 md:p-4 lg:p-6 text-center
+           hover:bg-hc-lightblue/50 transition-colors duration-200 cursor-pointer;
+  }
+
+  .quick-link-card img {
+    @apply mb-2 md:mb-3;
+  }
+
+  .quick-link-card svg {
+    @apply w-16 h-16 text-hc-teal mb-3;
+  }
+
+  .quick-link-card span {
+    @apply font-heading text-hc-blue uppercase text-[10px] md:text-xs lg:text-sm tracking-wide leading-tight;
+  }
+
+  /* Section headings with icons */
+  .section-heading {
+    @apply flex items-center justify-center gap-4 mb-8;
+  }
+
+  .section-heading svg {
+    @apply w-12 h-12 text-hc-teal;
+  }
+
+  .section-heading h2 {
+    @apply text-3xl md:text-4xl text-hc-blue font-bold;
+  }
+
+  /* Event cards */
+  .event-card {
+    @apply bg-white rounded-lg shadow-md p-6 text-center;
+  }
+
+  .event-card .date {
+    @apply text-2xl font-heading text-hc-blue font-bold mb-2;
+  }
+
+  .event-card .event-type {
+    @apply text-hc-orange uppercase text-xs tracking-wider font-semibold mb-4
+           border-t border-gray-200 pt-4;
+  }
+
+  .event-card .description {
+    @apply text-hc-teal text-sm leading-relaxed mb-6;
+  }
+
+  /* Announcement cards */
+  .announcement-card {
+    @apply bg-white rounded-lg shadow-md p-8 text-center max-w-3xl mx-auto;
+  }
+
+  .announcement-card h3 {
+    @apply text-2xl text-hc-orange font-bold mb-4;
+  }
+
+  .announcement-card p {
+    @apply text-hc-teal leading-relaxed mb-6;
+  }
+
+  /* Interior page headings */
+  .interior-h1 {
+    @apply text-2xl md:text-3xl font-heading text-hc-blue font-bold uppercase tracking-wide mb-4;
+  }
+
+  .interior-h2 {
+    @apply text-xl md:text-2xl font-heading text-hc-blue font-bold uppercase tracking-wide mb-4;
+  }
+
+  .interior-h3 {
+    @apply text-lg md:text-xl font-heading text-hc-orange font-bold uppercase tracking-wide mb-4;
+  }
+
+  .interior-h4 {
+    @apply text-base md:text-lg font-heading text-hc-orange font-bold uppercase tracking-wide mb-4;
+  }
+
+  /* Interior page body text */
+  .interior-body {
+    @apply text-hc-teal leading-relaxed mb-6;
+  }
+
+  /* Interior page links */
+  .interior-link {
+    @apply text-hc-blue hover:underline;
+  }
+
+  /* Interior page bullet list */
+  .interior-list-bullet {
+    @apply space-y-2 mb-6 pl-4;
+  }
+
+  .interior-list-bullet li {
+    @apply text-hc-teal relative pl-4;
+  }
+
+  .interior-list-bullet li::before {
+    content: '–';
+    @apply absolute left-0 text-hc-orange font-bold;
+  }
+
+  /* Interior page numbered list */
+  .interior-list-numbered {
+    @apply space-y-2 mb-6 pl-4;
+    counter-reset: item;
+  }
+
+  .interior-list-numbered li {
+    @apply text-hc-teal relative pl-6;
+    counter-increment: item;
+  }
+
+  .interior-list-numbered li::before {
+    content: counter(item) '.';
+    @apply absolute left-0 text-hc-orange font-bold;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .bg-gradient-header {
+    background: linear-gradient(180deg, #00456B 0%, #005A8C 100%);
+  }
+}

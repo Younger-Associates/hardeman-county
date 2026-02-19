@@ -1,0 +1,13 @@
+{
+  "name": "hardeman-county",
+  "version": "1.0.0",
+  "description": "Hardeman County, Tennessee website",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./docs/output.css",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./docs/output.css --watch",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./docs/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
